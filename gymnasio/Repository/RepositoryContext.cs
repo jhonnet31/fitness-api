@@ -13,6 +13,7 @@ namespace Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.Entity<Employee>().HasIndex(e => e.Name).IsUnique();
 
         }
 

@@ -21,6 +21,8 @@ namespace Repository.Configuration
                     Name = "IT_solutions",
                     Address = "pedregal 483, Medellin",
                     Country = "Colombia"
+                   
+                    
                 },
                 new Company
                 {

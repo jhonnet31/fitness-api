@@ -2,6 +2,7 @@
 using Contracts;
 using gymnasio.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +16,11 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
-#endregion
-
+#endregion  
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{           
+    options.SuppressModelStateInvalidFilter = true;
+});
 builder.Services.AddControllers(
     config =>
     {
