@@ -34,6 +34,20 @@ namespace Services
 
         }
 
+        public void DeleteExercise(int muscularGroupId, int id, bool trackchanges)
+        {
+            var muscularGroup = _repositoryManager.muscularGroup.GetMuscularGroup(muscularGroupId, trackchanges);
+            if (muscularGroup is null)
+                throw new MuscularGroupNotFound(muscularGroupId);
+
+            var exercise = _repositoryManager.exercise.GetExercise(id, trackchanges);
+            if (exercise is null)
+                throw new ExerciseNotFound(id);
+
+            _repositoryManager.exercise.DeleteExercise(exercise);
+            _repositoryManager.Save();
+            
+        }
 
         public IEnumerable<ExerciseDto> GetAllExercises(bool trackChanges) { 
           var exercises= _repositoryManager.exercise.GetAllExercises(trackChanges);

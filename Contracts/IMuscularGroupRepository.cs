@@ -10,5 +10,6 @@ namespace Contracts
         IEnumerable<MuscularGroup> GetAllMuscularGroups(bool trackChanges);
         void CreateMuscularGroup(MuscularGroup muscularGroup );
         IEnumerable<MuscularGroup> GetByIds(IEnumerable<int> ids,bool trackChanges);
+        
     }
 }

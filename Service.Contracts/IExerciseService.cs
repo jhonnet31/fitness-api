@@ -12,5 +12,6 @@ namespace Service.Contracts
         IEnumerable<ExerciseDto> GetAllExercises(bool trackChanges);
         ExerciseDto GetExercise(int id, bool trackChanges);
         ExerciseDto AddExercise(ExerciseForCreationDto exercise);
+        void DeleteExercise(int muscularGroupId, int id, bool trackchanges);
     }
 }

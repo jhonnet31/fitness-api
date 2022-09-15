@@ -12,5 +12,6 @@ namespace Contracts
         void CreateExercise(Exercise exercise);
         IEnumerable<Exercise> GetAllExercises(bool trackChanges);
         Exercise GetExercise(int id, bool trackChanges);
+        void DeleteExercise(Exercise exercise);
     }
 }

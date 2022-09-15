@@ -27,7 +27,7 @@ namespace Presentation.Controllers
         }
 
         [HttpGet("{id:int}",Name ="ExerciseById")]
-        public IActionResult GetExercise(int muscleId,int id) {
+        public IActionResult GetExercise(int id) {
             var exercise = _service.ExerciseService.GetExercise(id,false);
             return Ok(exercise);
         }
@@ -38,6 +38,12 @@ namespace Presentation.Controllers
                 return BadRequest($"{nameof(ExerciseForCreationDto)} object is null");
             var exerciseCreated=_service.ExerciseService.AddExercise(exercise);
             return CreatedAtRoute("ExerciseById", new { Id = exerciseCreated.Id}, exerciseCreated);
+        }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteExercise(int muscleId, int id) {
+            _service.ExerciseService.DeleteExercise(muscleId, id, false);
+            return NoContent();
         }
         
     }
