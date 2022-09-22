@@ -23,8 +23,8 @@ namespace Presentation.Controllers
 
         [HttpGet("{id:int}", Name = "MuscularGroupById")]
         public IActionResult GetMuscularGroup(int id) {
-            var muscularGroup = _service.MuscularGroupService.GetMuscularGroup(id, false);
-            return Ok(muscularGroup);
+            //var muscularGroup = _service.MuscularGroupService.GetMuscularGroup(id, false);
+            return Ok(new {idtest=id });
         }
 
         [HttpPost("create")]
