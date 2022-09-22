@@ -13,7 +13,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureServiceManager();
-builder.Services.ConfigureSqlContext(builder.Configuration);
+//builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigurationRepositoryManager();
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
